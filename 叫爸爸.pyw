@@ -28,6 +28,7 @@ if __name__ == "__main__":
     w = tk.Tk()
     w.title("简单问题")
     w.geometry("500x300")
+    w.resizable(False, False)
     w.protocol("WM_DELETE_WINDOW", try_to_close)
 
     l = tk.Label(w, text="叫爸爸", font=f)
