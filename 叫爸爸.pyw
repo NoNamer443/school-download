@@ -23,22 +23,20 @@ def try_to_close() -> None:
     showinfo("嘿", "你以为呢")
 
 
-# 不加点注释就浑身难受
 if __name__ == "__main__":
     w = tk.Tk()
     w.title("简单问题")
     w.geometry("500x300")
-    w.resizable(False, False)
+    w.resizable(False, False) # 阻止窗口缩放
     w.protocol("WM_DELETE_WINDOW", try_to_close)
 
     l = tk.Label(w, text="叫爸爸", font=f)
 
     frame = tk.Frame(w)
 
-    var1 = tk.StringVar()
+    var1 = tk.StringVar(value="爸爸")
     b1 = tk.Button(frame, textvariable=var1, font=f, command=hit)
-
-    var2 = tk.StringVar()
+    var2 = tk.StringVar(value="不叫")
     b2 = tk.Button(frame, textvariable=var2, font=f, command=hit)
 
     l.pack(pady=20)
@@ -48,9 +46,5 @@ if __name__ == "__main__":
 
     b1.bind("<Enter>", change1)
     b2.bind("<Enter>", change2)
-
-    var1.set("爸爸")
-
-    var2.set("不叫")
 
     w.mainloop()
