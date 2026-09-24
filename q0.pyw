@@ -1,0 +1,1 @@
+_='_=%r;n=%d\nif n<20:\n	with open(f"q{n+1}.pyw","w")as f:f.write(_%%(_,n+1))';n=0;exec(_%(_,n))
